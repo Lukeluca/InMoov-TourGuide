@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "718787171938",
+    "firebase_url": "https://inmoov-df4f3.firebaseio.com",
+    "project_id": "inmoov-df4f3",
+    "storage_bucket": "inmoov-df4f3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718787171938:android:e746cc39469761b7",
+        "android_client_info": {
+          "package_name": "com.lukeluca.androidthings.inmoov"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "718787171938-3bjlmun3ok2gklk5gn18g100u9fpvbiu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lukeluca.androidthings.inmoov",
+            "certificate_hash": "c4e1da5d59c0aa6594e9756a6b683850980e365b"
+          }
+        },
+        {
+          "client_id": "718787171938-nsejv3cofvumaehb0ki6u499rbb8hj6h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpadfMckXeGHvPGzGUz__s0WxaiM03Qqc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "718787171938-nsejv3cofvumaehb0ki6u499rbb8hj6h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center_horizontal" android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" android:orientation="horizontal">
+        <Button
+            android:id="@+id/button_full_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="@string/left_full"/>
+        <Button
+            android:id="@+id/button_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="Head Left"/>
+        <Button
+            android:id="@+id/button_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="Head Center"/>
+        <Button
+            android:id="@+id/button_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="Head Right"/>
+        <Button
+            android:id="@+id/button_full_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_weight="1"
+            android:text=">>"/>
+    </LinearLayout>
+    <Button
+        android:id="@+id/button_mouth_closed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_weight="1" android:text="Mouth Closed"/>
+    <Button
+        android:id="@+id/button_mouth_open"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_weight="1" android:text="Mouth Open"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" android:orientation="horizontal">
+        <Button
+            android:id="@+id/button_right_arm_left_full"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="@string/left_full"/>
+        <Button
+            android:id="@+id/button_right_arm_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="Arm Twist Left"/>
+        <Button
+            android:id="@+id/button_right_arm_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="Arm Center"/>
+        <Button
+            android:id="@+id/button_right_arm_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="Arm Twist Right"/>
+        <Button
+            android:id="@+id/button_right_arm_right_full"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_weight="1"
+            android:text=">>"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/button_thumb_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="Thumb Close"/>
+            <Button
+                android:id="@+id/button_thumb_open"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="Thumb Open"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1" android:orientation="vertical">
+            <Button
+                android:id="@+id/button_index_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="Index Close"/>
+            <Button
+                android:id="@+id/button_index_open"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="Index Open"/>
+        </LinearLayout>
+        <ImageButton
+            android:id="@+id/btn_close"
+            style="@android:style/Widget.Material.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="?android:attr/actionModeCloseDrawable"/>
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:text="TextView"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        android:visibility="visible"/>
+</LinearLayout>

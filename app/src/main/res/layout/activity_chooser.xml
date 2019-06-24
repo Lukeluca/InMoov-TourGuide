@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChooserActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_marginEnd="407dp"
+        android:layout_marginStart="406dp"
+        android:layout_marginTop="16dp"
+        android:text="Choose a Mode"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        android:visibility="visible" app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <Button
+        android:id="@+id/btn_mode_manual"
+        style="@android:style/Widget.Material.Button"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginEnd="418dp" android:layout_marginStart="418dp"
+        android:layout_marginTop="32dp"
+        android:text="Manual Controls"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/textView"/>
+    <Button
+        android:id="@+id/btn_mode_sentry"
+        style="@android:style/Widget.Material.Light.Button"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginEnd="438dp" android:layout_marginStart="436dp"
+        android:layout_marginTop="32dp"
+        android:text="Sentry"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/btn_mode_manual"/>
+    <Button
+        android:id="@+id/btn_mode_tour_guide"
+        style="@android:style/Widget.Material.Light.Button"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginEnd="435dp"
+        android:layout_marginStart="435dp"
+        android:layout_marginTop="32dp"
+        android:text="Tour Guide"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/btn_mode_sentry"/>
+    <Button
+        android:id="@+id/btn_image_classifier"
+        style="@android:style/Widget.Material.Light.Button"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginEnd="439dp" android:layout_marginStart="448dp"
+        android:layout_marginTop="32dp"
+        android:text="Image Classifier"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_mode_tour_guide"/>
+</android.support.constraint.ConstraintLayout>
