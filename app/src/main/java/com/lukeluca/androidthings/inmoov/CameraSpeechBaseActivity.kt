@@ -11,8 +11,6 @@ import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
 import android.util.Log
 import android.util.Size
-import android.view.View
-import android.widget.ImageView
 import com.google.firebase.ml.vision.FirebaseVision
 import com.google.firebase.ml.vision.common.FirebaseVisionImage
 import com.google.firebase.ml.vision.face.FirebaseVisionFaceDetector
@@ -40,7 +38,7 @@ public abstract class CameraSpeechBaseActivity : Activity(), ImageReader.OnImage
     private var mCameraHandler: CameraHandler? = null
     private var mImagePreprocessor: ImagePreprocessor? = null
     // Matches the images used to train the TensorFlow model
-    protected val MODEL_IMAGE_SIZE = Size(224, 224)
+    protected val MODEL_IMAGE_SIZE = Size(480, 480)
 
 
     private var mTtsEngine: TextToSpeech? = null
@@ -50,22 +48,7 @@ public abstract class CameraSpeechBaseActivity : Activity(), ImageReader.OnImage
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_tour_guide)
-//
-//        val close: View = findViewById(R.id.btn_close)
-//        close.setOnClickListener { finish() }
-//
-//        mImage = findViewById(R.id.iv_camera)
-//
-//        options = FirebaseVisionFaceDetectorOptions.Builder()
-//                .setPerformanceMode(FirebaseVisionFaceDetectorOptions.FAST)
-//                .setLandmarkMode(FirebaseVisionFaceDetectorOptions.ALL_LANDMARKS)
-//                .setClassificationMode(FirebaseVisionFaceDetectorOptions.ALL_CLASSIFICATIONS)
-//                .setMinFaceSize(0.1f) // default is 0.1
-//                .enableTracking()
-//                .build()
-//
-//        detector = FirebaseVision.getInstance().getVisionFaceDetector(options!!)
+
 
         arduino = Arduino()
 
@@ -74,34 +57,6 @@ public abstract class CameraSpeechBaseActivity : Activity(), ImageReader.OnImage
         mBackgroundHandler = Handler(mBackgroundThread?.getLooper())
         mBackgroundHandler!!.post(mInitializeOnBackground)
     }
-
-//    fun onImageCapture(image: FirebaseVisionImage) {
-//        val result = detector?.detectInImage(image)!!
-//                .addOnSuccessListener {
-//                    faces ->
-//                    for (face in faces) {
-//                        Log.i(TAG, "Smiling probability: " + face.smilingProbability.toString());
-//                    }
-//
-//                    if (faces.size > 0) {
-//                        // TODO start the tour
-//                        mTtsSpeaker?.speakText(mTtsEngine, "Hello")
-//
-//
-//                    } else {
-//                        captureImage()
-//                    }
-//                }
-//                .addOnFailureListener{
-//                    // If we don't see something, just keep waiting.
-//                    Log.i(TAG, "error with detection");
-//
-//                    captureImage()
-//                }
-//                .addOnCompleteListener {
-//
-//                }
-//    }
 
 
     private val mInitializeOnBackground = Runnable {
@@ -200,13 +155,10 @@ public abstract class CameraSpeechBaseActivity : Activity(), ImageReader.OnImage
     override fun onImageAvailable(reader: ImageReader?) {
         Log.i(TAG, "onImageAvailable (found Image)")
         var bitmap: Bitmap? = null
-        reader?.acquireNextImage().use { image -> bitmap = mImagePreprocessor?.preprocessImage(image) }
+        reader?.acquireLatestImage().use { image -> bitmap = mImagePreprocessor?.preprocessImage(image) }
 
         onBitmapAvailable(bitmap!!)
 
-        //runOnUiThread { mImage!!.setImageBitmap(bitmap) }
-
-       // bitmap?.let { FirebaseVisionImage.fromBitmap(it) }?.let { onImageCapture(it) };
     }
 
     abstract fun onBitmapAvailable(bitmap: Bitmap)

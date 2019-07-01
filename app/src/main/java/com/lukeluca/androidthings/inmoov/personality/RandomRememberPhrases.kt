@@ -2,17 +2,20 @@ package com.lukeluca.androidthings.inmoov.personality
 
 import java.util.*
 
-class RandomSearchPhrases {
+class RandomRememberPhrases {
 
     private val PHRASES = arrayOf(
-            "Hello?",
-            "What?",
-            "Hi there"
+            "I will remember you",
+            "You are unforgettable",
+            "I've added you to my list",
+            "I'll never forget you",
+            "Database entry added",
+            "That is an unforgettable face"
     )
 
     private val SECONDS = 1000;
 
-    private val TIME_BETWEEN_PHRASES = 12*SECONDS;
+    private val TIME_BETWEEN_PHRASES = 30*SECONDS;
 
     private var lastRequestedTime : Long = 0
 

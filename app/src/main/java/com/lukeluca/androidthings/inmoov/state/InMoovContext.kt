@@ -34,7 +34,7 @@ class InMoovContext {
         myActivity.speakText(string, utteranceId)
     }
 
-    fun sendCommend(servoCode: String, value: Int, relative: Boolean) {
+    fun sendCommand(servoCode: String, value: Int, relative: Boolean) {
         myActivity.sendCommand(servoCode, value, relative)
     }
 

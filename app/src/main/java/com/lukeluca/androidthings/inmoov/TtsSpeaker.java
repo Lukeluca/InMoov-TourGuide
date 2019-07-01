@@ -15,17 +15,21 @@
  */
 package com.lukeluca.androidthings.inmoov;
 
+import android.media.AudioAttributes;
 import android.speech.tts.TextToSpeech;
+import android.speech.tts.Voice;
 
 import com.lukeluca.androidthings.inmoov.classifier.Recognition;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.NavigableMap;
 import java.util.Random;
+import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.concurrent.TimeUnit;
@@ -89,6 +93,11 @@ public class TtsSpeaker {
     }
 
     public void speakText(TextToSpeech tts, String text, String utterance_id) {
+        Set<String> a=new HashSet<>();
+        a.add("male");
+
+        Voice v=new Voice("en-us-x-sfg#male_2-local",new Locale("en","US"),400,200,false,a);
+        tts.setVoice(v);
         tts.speak( text, TextToSpeech.QUEUE_ADD, null, utterance_id);
     }
 

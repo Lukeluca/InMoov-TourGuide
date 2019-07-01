@@ -24,7 +24,7 @@ import android.media.Image;
 import android.os.Environment;
 import android.util.Log;
 
-import junit.framework.Assert;
+//import junit.framework.*;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -54,8 +54,8 @@ public class ImagePreprocessor {
             return null;
         }
 
-        Assert.assertEquals("Invalid size width", rgbFrameBitmap.getWidth(), image.getWidth());
-        Assert.assertEquals("Invalid size height", rgbFrameBitmap.getHeight(), image.getHeight());
+        //Assert.assertEquals("Invalid size width", rgbFrameBitmap.getWidth(), image.getWidth());
+        //Assert.assertEquals("Invalid size height", rgbFrameBitmap.getHeight(), image.getHeight());
 
         if (croppedBitmap != null && rgbFrameBitmap != null) {
             ByteBuffer bb = image.getPlanes()[0].getBuffer();
@@ -122,7 +122,7 @@ public class ImagePreprocessor {
 
     static void cropAndRescaleBitmap(final Bitmap src, final Bitmap dst,
                                      int sensorOrientation) {
-        Assert.assertEquals(dst.getWidth(), dst.getHeight());
+        //Assert.assertEquals(dst.getWidth(), dst.getHeight());
         final float minDim = Math.min(src.getWidth(), src.getHeight());
 
         final Matrix matrix = new Matrix();

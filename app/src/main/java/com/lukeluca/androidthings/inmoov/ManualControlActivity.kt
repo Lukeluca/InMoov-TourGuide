@@ -50,6 +50,12 @@ class ManualControlActivity : Activity() {
         val head_right_full: View = findViewById(R.id.button_full_right)
         head_right_full.setOnClickListener { sendCommand("HH", 0, false) }
 
+        val headUp: View = findViewById(R.id.button_head_vert_up)
+        headUp.setOnClickListener { sendCommand("HV", 10, true) }
+
+        val headDown: View = findViewById(R.id.button_head_vert_down)
+        headDown.setOnClickListener { sendCommand("HV", -10, true) }
+
         val mouth_close:View = findViewById(R.id.button_mouth_closed)
         mouth_close.setOnClickListener { sendCommand( "HM", 0, relative = false) }
 
@@ -84,6 +90,23 @@ class ManualControlActivity : Activity() {
         val right_index_open:View = findViewById(R.id.button_index_open)
         right_index_open.setOnClickListener { sendCommand("RI", 100, false) }
 
+        val rightMiddleClose: View = findViewById(R.id.button_middle_close)
+        rightMiddleClose.setOnClickListener { sendCommand( "RM", 0, false) }
+
+        val rightMiddleOpen: View = findViewById(R.id.button_middle_open)
+        rightMiddleOpen.setOnClickListener { sendCommand( "RM", 100, false) }
+
+        val rightRingClose: View = findViewById(R.id.button_middle_close)
+        rightRingClose.setOnClickListener { sendCommand( "RR", 0, false) }
+
+        val rightRingOpen: View = findViewById(R.id.button_middle_open)
+        rightRingOpen.setOnClickListener { sendCommand( "RR", 100, false) }
+
+        val rightPinkyClose: View = findViewById(R.id.button_middle_close)
+        rightPinkyClose.setOnClickListener { sendCommand( "RP", 0, false) }
+
+        val rightPinkyOpen: View = findViewById(R.id.button_middle_open)
+        rightPinkyOpen.setOnClickListener { sendCommand( "RP", 100, false) }
     }
 
     private fun turnHeadLeft(it: View?) {

@@ -2,17 +2,17 @@ package com.lukeluca.androidthings.inmoov.personality
 
 import java.util.*
 
-class RandomSearchPhrases {
+class RandomSmilePhrases {
 
     private val PHRASES = arrayOf(
-            "Hello?",
-            "What?",
-            "Hi there"
+            "That is a great smile",
+            "Thank you for smiling",
+            "I like to see you smile"
     )
 
     private val SECONDS = 1000;
 
-    private val TIME_BETWEEN_PHRASES = 12*SECONDS;
+    private val TIME_BETWEEN_PHRASES = 30*SECONDS;
 
     private var lastRequestedTime : Long = 0
 

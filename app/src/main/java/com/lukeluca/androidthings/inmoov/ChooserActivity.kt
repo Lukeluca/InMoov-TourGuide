@@ -44,31 +44,37 @@ class ChooserActivity : Activity() {
             startActivity( intent )
         }
 
-        val tour_guide : View = findViewById(R.id.btn_mode_tour_guide)
-        tour_guide.setOnClickListener {
+        val sentry: View = findViewById(R.id.btn_mode_sentry)
+        sentry.setOnClickListener{
+            val intent = Intent( this, SentryActivity::class.java)
+            startActivity( intent )
+        }
+
+        val tourGuide : View = findViewById(R.id.btn_mode_tour_guide)
+        tourGuide.setOnClickListener {
             val intent = Intent(this, TourGuideActivity::class.java)
             startActivity( intent )
         }
 
-        val image_classifier: View = findViewById(R.id.btn_image_classifier)
-        image_classifier.setOnClickListener {
-            val intent = Intent ( this, ImageClassifierActivity::class.java)
+        val imageClassifier: View = findViewById(R.id.btn_image_classifier)
+        imageClassifier.setOnClickListener {
+            val intent = Intent ( this, GreetirActivity::class.java)
             startActivity( intent )
         }
 
-        try {
-            val on = false
-            val ledstrip = RainbowHat.openLedStrip()
-            ledstrip.setBrightness(1)
-            val rainbow = IntArray(RainbowHat.LEDSTRIP_LENGTH)
-            for (i in rainbow.indices) {
-                rainbow[i] = if (!on) 0 else Color.HSVToColor(254, arrayOf(i * 360f / RainbowHat.LEDSTRIP_LENGTH , 1f, 1f ).toFloatArray() )
-            }
-            ledstrip.write(rainbow)
-            // Close the device when done.
-            ledstrip.close()
-        } catch (e : Exception) {
-
-        }
+//        try {
+//            val on = false
+//            val ledstrip = RainbowHat.openLedStrip()
+//            ledstrip.setBrightness(1)
+//            val rainbow = IntArray(RainbowHat.LEDSTRIP_LENGTH)
+//            for (i in rainbow.indices) {
+//                rainbow[i] = if (!on) 0 else Color.HSVToColor(254, arrayOf(i * 360f / RainbowHat.LEDSTRIP_LENGTH , 1f, 1f ).toFloatArray() )
+//            }
+//            ledstrip.write(rainbow)
+//            // Close the device when done.
+//            ledstrip.close()
+//        } catch (e : Exception) {
+//
+//        }
     }
 }
